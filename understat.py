@@ -3,7 +3,7 @@ import json
 
 import aiohttp
 
-from understat import Understat
+from understat_client import Understat  # Adjust the import statement here
 
 
 async def main():
