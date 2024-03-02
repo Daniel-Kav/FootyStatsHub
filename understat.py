@@ -1,7 +1,7 @@
 import asyncio
 import json
 
-import aiohttp
+import aiohtt
 
 from understat_client import Understat  
 
