@@ -1,19 +1,12 @@
-import asyncio
-import json
+import requests
 
-import aiohtt
+url = "https://api-football-v1.p.rapidapi.com/v3/timezone"
 
-from understat_client import Understat  
+headers = {
+	"X-RapidAPI-Key": "aba77f092dmshabe61a506007989p127740jsn179e2d4845bc",
+	"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+}
 
+response = requests.get(url, headers=headers)
 
-async def main():
-    async with aiohttp.ClientSession() as session:
-        understat = Understat(session)
-        data = await understat.get_league_players("epl", 2018, {"team_title": "Manchester United"})
-        print(json.dumps(data))
-
-
-if __name__ == "__main__":
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(main())
+print(response.json())
