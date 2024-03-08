@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from understatapi import UnderstatClient
-import json
 
 def match_rosters(request):
      # Use the UnderstatClient within a context manager to ensure proper resource management
