@@ -9,32 +9,16 @@
 
 <body>
     <h1>League Player Data</h1>
-    <pre>
-        {% for player in league_player_data %}
-            {{ player }}
-        {% endfor %}
-    </pre>
+    <pre>{{ league_player_data }}</pre>
 
     <h1>Player Shot Data</h1>
-    <pre>
-        {% for shot in player_shot_data %}
-            {{ shot }}
-        {% endfor %}
-    </pre>
+    <pre>{{ player_shot_data }}</pre>
 
     <h1>Team Match Data</h1>
-    <pre>
-        {% for match in team_match_data %}
-            {{ match }}
-        {% endfor %}
-    </pre>
+    <pre>{{ team_match_data }}</pre>
 
     <h1>Roster Data</h1>
-    <pre>
-        {% for player in roster_data['home'] %}
-            {{ player }}
-        {% endfor %}
-    </pre>
+    <pre>{{ roster_data }}</pre>
 </body>
 
 </html>
