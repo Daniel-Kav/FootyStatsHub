@@ -19,9 +19,9 @@ def match_rosters(request):
     
     # Pass the fetched data to the template
     context = {
-        'league_player_data': league_player_data[:2],
-        'player_shot_data': player_shot_data,
-        'team_match_data': team_match_data,
+        'league_player_data': league_player_data[:1],
+        'player_shot_data': player_shot_data[:1],
+        'team_match_data': team_match_data[:1],
         'roster_data': roster_data,
     }
 
