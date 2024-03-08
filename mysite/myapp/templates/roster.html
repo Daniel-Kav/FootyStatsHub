@@ -4,25 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Rosters</title>
+    <title>My Understat Data</title>
 </head>
 
 <body>
-    <h1>Match Rosters</h1>
-
-    <h2>Home Team: {{ home_team.team_name }}</h2>
-    <ul>
-        {% for player in home_team.players %}
-        <li>{{ player.name }}</li>
+    <h1>League Player Data</h1>
+    <pre>
+        {% for player in league_player_data %}
+            {{ player }}
         {% endfor %}
-    </ul>
+    </pre>
 
-    <h2>Away Team: {{ away_team.team_name }}</h2>
-    <ul>
-        {% for player in away_team.players %}
-        <li>{{ player.name }}</li>
+    <h1>Player Shot Data</h1>
+    <pre>
+        {% for shot in player_shot_data %}
+            {{ shot }}
         {% endfor %}
-    </ul>
+    </pre>
+
+    <h1>Team Match Data</h1>
+    <pre>
+        {% for match in team_match_data %}
+            {{ match }}
+        {% endfor %}
+    </pre>
+
+    <h1>Roster Data</h1>
+    <pre>
+        {% for player in roster_data['home'] %}
+            {{ player }}
+        {% endfor %}
+    </pre>
 </body>
 
 </html>

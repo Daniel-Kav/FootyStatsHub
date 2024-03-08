@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from understatapi import UnderstatClient
+import json
 
 def match_rosters(request):
      # Use the UnderstatClient within a context manager to ensure proper resource management
@@ -16,6 +17,12 @@ def match_rosters(request):
         # Fetch roster data for a specific match (match ID: 14711)
         roster_data = understat.match(match="14711").get_roster_data()
 
+    # Deserialize JSON data into Python dictionaries or lists
+    '''  league_player_data = json.loads(league_player_data)
+    player_shot_data = json.loads(player_shot_data)
+    team_match_data = json.loads(team_match_data)
+    roster_data = json.loads(roster_data)
+    '''
     # Pass the fetched data to the template
     context = {
         'league_player_data': league_player_data,
