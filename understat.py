@@ -1,12 +1,9 @@
 import requests
 
-url = "https://api-football-v1.p.rapidapi.com/v3/timezone"
+url = "https://understat.com/league/Ligue_1"
 
-headers = {
-	"X-RapidAPI-Key": "aba77f092dmshabe61a506007989p127740jsn179e2d4845bc",
-	"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
-}
 
-response = requests.get(url, headers=headers)
+
+response = requests.get(url)
 
 print(response.json())
