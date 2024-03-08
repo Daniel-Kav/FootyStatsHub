@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Rosters</title>
+</head>
+
+<body>
+    <h1>Match Rosters</h1>
+
+    <h2>Home Team: {{ home_team.team_name }}</h2>
+    <ul>
+        {% for player in home_team.players %}
+        <li>{{ player.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Away Team: {{ away_team.team_name }}</h2>
+    <ul>
+        {% for player in away_team.players %}
+        <li>{{ player.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
