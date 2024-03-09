@@ -4,21 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Understat Data</title>
+    <title>Understat Data</title>
 </head>
 
 <body>
-    <h1>League Player Data</h1>
-    <pre>{{ league_player_data }}</pre>
+    <h2>League Player Data</h2>
+    <ul>
+        {% for player in league_player_data %}
+        <li>
+            <strong>Player Name:</strong> {{ player.player_name }}<br>
+            <strong>Goals:</strong> {{ player.goals }}<br>
+            <strong>Assists:</strong> {{ player.assists }}<br>
+            <!-- Add more fields as needed -->
+        </li>
+        {% endfor %}
+    </ul>
 
-    <h1>Player Shot Data</h1>
-    <pre>{{ player_shot_data }}</pre>
+    <h2>Player Shot Data</h2>
+    <ul>
+        {% for shot in player_shot_data %}
+        <li>
+            <strong>Player:</strong> {{ shot.player }}<br>
+            <strong>Result:</strong> {{ shot.result }}<br>
+            <strong>XG:</strong> {{ shot.xG }}<br>
+            <!-- Add more fields as needed -->
+        </li>
+        {% endfor %}
+    </ul>
 
-    <h1>Team Match Data</h1>
-    <pre>{{ team_match_data }}</pre>
-
-    <h1>Roster Data</h1>
-    <pre>{{ roster_data }}</pre>
+    <h2>Team Match Data</h2>
+    <ul>
+        {% for match in team_match_data %}
+        <li>
+            <strong>Home Team:</strong> {{ match.h.title }}<br>
+            <strong>Away Team:</strong> {{ match.a.title }}<br>
+            <strong>Result:</strong> {{ match.result }}<br>
+            <!-- Add more fields as needed -->
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
