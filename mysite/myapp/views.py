@@ -17,7 +17,7 @@ def match_rosters(request):
         roster_data = understat.match(match="14711").get_roster_data()
 
     
-    # Pass the fetched data to the template
+    # Pass the fetched data to the roster template
     context = {
         'league_player_data': league_player_data,
         'player_shot_data': player_shot_data[:1],
