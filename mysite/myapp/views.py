@@ -32,7 +32,7 @@ def match_rosters(request):
 
 
 def match_rosters(request):
-     # Use the UnderstatClient within a context manager to ensure proper resource management
+    # Use the UnderstatClient within a context manager to ensure proper resource management
     with UnderstatClient() as understat:
         # Fetch league player data for the English Premier League (EPL) season 2019
         league_player_data = understat.league(league="EPL").get_player_data(season="2019")
@@ -46,12 +46,17 @@ def match_rosters(request):
         # Fetch roster data for a specific match (match ID: 14711)
         roster_data = understat.match(match="14711").get_roster_data()
 
-    
+    # Parse JSON data into Python dictionaries or lists
+    league_player_data = json.loads(league_player_data)
+    player_shot_data = json.loads(player_shot_data)
+    team_match_data = json.loads(team_match_data)
+    roster_data = json.loads(roster_data)
+
     # Pass the fetched data to the roster template
     context = {
-        'league_player_data': league_player_data[:1],
-        'player_shot_data': player_shot_data[:1],
-        'team_match_data': team_match_data[:1],
+        'league_player_data': league_player_data,
+        'player_shot_data': player_shot_data,
+        'team_match_data': team_match_data,
         'roster_data': roster_data,
     }
 
