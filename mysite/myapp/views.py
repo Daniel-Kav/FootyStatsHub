@@ -27,7 +27,7 @@ def match_rosters(request):
 
     # Pass the fetched data to the roster template
     context = {
-        'fixtures': fixtures,
+        'fixtures': fixtures[:1],
     }
 
 
