@@ -4,6 +4,32 @@ import asyncio
 import aiohttp
 import json
 
+async def get_team_fixtures(league_name, season, team_id):
+    async with aiohttp.ClientSession() as session:
+        understat = UnderstatClient(session)
+        fixtures = await understat.get_league_fixtures(
+            league_name,
+            season,
+            options={"h": {"id": team_id}}
+        )
+        return fixtures
+
+async def fetch_data():
+    league_name = "epl"
+    season = 2018
+    team_id = "89"  # Manchester United's ID
+    fixtures = await get_team_fixtures(league_name, season, team_id)
+    return fixtures
+
+def match_rosters(request):
+    # Run the async function synchronously using asyncio.run
+    fixtures = asyncio.run(fetch_data())
+
+    # Pass the fetched data to the roster template
+    context = {
+        'fixtures': fixtures,
+    }
+
 
 def match_rosters(request):
      # Use the UnderstatClient within a context manager to ensure proper resource management
