@@ -55,4 +55,4 @@ def match_rosters(request):
         'roster_data': roster_data,
     }
 
-    return render(request, 'roster.html', context )
+    return render(request, 'roster.html', context , context)
