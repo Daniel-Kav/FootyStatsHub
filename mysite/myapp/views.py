@@ -17,7 +17,7 @@ async def get_team_fixtures(league_name, season, team_id):
 async def fetch_data():
     league_name = "epl"
     season = 2018
-    team_id = "89"  # Manchester United's ID
+    team_id = "89"  # Manchester United ID
     fixtures = await get_team_fixtures(league_name, season, team_id)
     return fixtures
 
