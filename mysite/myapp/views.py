@@ -52,7 +52,7 @@ def match_rosters(request):
     team_match_data = json.loads(team_match_data)
     roster_data = json.loads(roster_data)
 
-    # Pass the fetched data to the roster template
+    # Pass the fetched data to the roster template for display
     context = {
         'league_player_data': league_player_data,
         'player_shot_data': player_shot_data,
