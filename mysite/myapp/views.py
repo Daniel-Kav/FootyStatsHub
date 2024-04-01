@@ -4,6 +4,7 @@ import asyncio
 import aiohttp
 import json
 
+'''
 async def get_team_fixtures(league_name, season, team_id):
     async with aiohttp.ClientSession() as session:
         understat = UnderstatClient(session)
@@ -61,8 +62,11 @@ def match_rosters(request):
     }
 
     return render(request, 'roster.html', context , context)
+'''
+    
 
 #sportsMonk livescore
+
 def football_scores(request):
     # API details
     API_BASE_URL = "https://api.sportmonks.com/football/v3"
@@ -80,4 +84,5 @@ def football_scores(request):
     else:
         fixtures = []
 
-    return render(request, 'rosters.html', {'fixtures': fixtures})
+    return render(request, 'football_scores.html', {'fixtures': fixtures})
+
