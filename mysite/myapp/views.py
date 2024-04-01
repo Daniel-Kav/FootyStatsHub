@@ -31,7 +31,7 @@ def match_rosters(request):
         'fixtures': fixtures[:1],
     }
 
-
+'''
 def match_rosters(request):
     # Use the UnderstatClient within a context manager to ensure proper resource management
     with UnderstatClient() as understat:
@@ -62,7 +62,7 @@ def match_rosters(request):
     }
 
     return render(request, 'roster.html', context , context)
-'''
+
     
 
 #sportsMonk livescore
