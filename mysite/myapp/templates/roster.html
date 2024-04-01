@@ -1,4 +1,4 @@
-<!-- roster.html -->
+<!-- roster.html 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,8 +36,8 @@
             <tr>
                 <th>Player Name</th>
                 <th>Games</th>
-                <th>Time</th>
-                <!-- Add other headers as needed -->
+                <th>Time</th>-->
+                <!-- Add other headers as needed 
             </tr>
         </thead>
         <tbody>
@@ -45,14 +45,37 @@
             <tr>
                 <td>{{ player.player_name }}</td>
                 <td>{{ player.games }}</td>
-                <td>{{ player.time }}</td>
-                <!-- Add other data cells as needed -->
+                <td>{{ player.time }}</td>-->
+                <!-- Add other data cells as needed
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table> -->
 
-    <!-- Repeat similar table structures for other data -->
+    <!-- Repeat similar table structures for other data 
+</body>
+
+</html>-->
+
+<!-- football_scores.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Football Scores</title>
+    <!-- Add any CSS or styling links here -->
+</head>
+
+<body>
+    <h1>Football Scores</h1>
+    <ul>
+        {% for fixture in fixtures %}
+        <li>
+            <strong>{{ fixture.name }}</strong> - {{ fixture.starting_at }}
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>

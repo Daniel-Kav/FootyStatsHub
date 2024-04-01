@@ -61,3 +61,23 @@ def match_rosters(request):
     }
 
     return render(request, 'roster.html', context , context)
+
+#sportsMonk livescore
+def football_scores(request):
+    # API details
+    API_BASE_URL = "https://api.sportmonks.com/football/v3"
+    API_KEY = "pEjIk7HOjb8S9JKq1zddXqKEl1XeP8DgJMtxatCk0Nhg2sdu0zswmxN1gXcF"
+
+    # Make request to the API
+    endpoint = f"{API_BASE_URL}/fixtures"
+    params = {
+        "api_token": API_KEY
+    }
+    response = requests.get(endpoint, params=params)
+
+    if response.status_code == 200:
+        fixtures = response.json().get('data', [])
+    else:
+        fixtures = []
+
+    return render(request, 'rosters.html', {'fixtures': fixtures})
